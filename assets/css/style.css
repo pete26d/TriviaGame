@@ -1,0 +1,25 @@
+button {
+  margin: 10px;
+}
+
+
+
+#info-box-text {
+  position: relative; 
+  top: 90px;
+  left: 75px;
+}
+
+#time-left {
+  font-family: monospace;
+  font-size: 120px;
+  color: green;
+
+  /* Typography */
+  text-align: center;
+
+  /* Visual */
+  background: black;
+}
+
+

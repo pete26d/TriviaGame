@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    <title>TV Theme Song Trivia</title>
+</head>
+
+<body>
+  <div class="container">
+
+      <div class="card bg-dark text-white w-50">
+          <img class="card-img" src="assets/images/tv.png" alt="tv image">
+          <div class="card-img-overlay">
+            
+            <h3 class="card-text" id="info-box-text"></h3>
+          </div>
+        </div>
+    
+    
+    <div class="row">
+       
+      <div class="col-12" id="choices">
+        <button type="button" class="btn btn-outline-success btn-lg" id="start-btn">CLICK TO START!</button>  
+      </div>
+
+    </div> 
+
+    <div class="row">
+        <div class = "col-12">
+            <div class="card">
+              <div class="card-header">
+                Game Score: <strong id="game-score"></strong>    Questions Remaining: <strong id="qs-left"></strong> 
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title text-success">Number Right: </h5><h5 id="num-right"></h5>
+                  <h5 class="card-title text-danger">Number Wrong: </h5><h5 id="num-wrong"></h5>
+              </div>
+            </div>
+          </div>
+  
+    </div>
+  </div>
+</body>
+
+</html>
