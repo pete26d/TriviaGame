@@ -14,7 +14,7 @@ var triviaGame = {
   alreadyGuessed: [],
   rightAnswer: "",
   
-  answerBank: ["Police Squad", "Sanford and Son", "Moonlighting", "Family Ties", "Perfect Strangers", "CHiPS", "NYPD Blue", "Magnum PI", "LA Law", "MacGyver", "St Elsewhere", "Mystery Science Theater 3000", "Matlock", "Murder She Wrote"],
+  answerBank: ["Police Squad", "Sanford And Son", "Moonlighting", "Family Ties", "Perfect Strangers", "CHiPS", "NYPD Blue", "Magnum PI", "LA Law", "MacGyver", "St Elsewhere", "Mystery Science Theater 3000", "Matlock", "Murder She Wrote"],
   
   startGame: function() {
 
