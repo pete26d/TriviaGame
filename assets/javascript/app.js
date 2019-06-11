@@ -9,6 +9,7 @@ var triviaGame = {
   score: 0,
   questionsLeft: 1,
   timeLeft: 45,
+  clockRunning: false,
   choiceHolder: [],
   noRepeats: [],
   alreadyGuessed: [],
@@ -84,6 +85,7 @@ var triviaGame = {
       
       if (triviaGame.timeLeft === 0) {
         clearInterval(intervalID);
+        triviaGame.clockRunning = false;
         triviaGame.timeLeft = 45;
         myAudio.pause();
         triviaGame.wrongCount++;
@@ -103,7 +105,7 @@ var triviaGame = {
   
   renderButtons: function() {
   
-    $("#choices").empty();
+    $("#choices").removeClass("h1").empty();
     
       
     for (var j = 0; j < triviaGame.choiceHolder.length; j++) {
@@ -115,10 +117,17 @@ var triviaGame = {
       $("#choices").append(ansBtn);
     }
 
-    $(".choice-button").on("click", triviaGame.checkAnswer);
+    
+    
+  
+    $(".choice-button").one("click", triviaGame.checkAnswer);
+  
 
     $("#info-box-text").text(triviaGame.timeLeft + " seconds left");
-    intervalID = setInterval(triviaGame.triviaTimer, 1000);
+    if (!triviaGame.clockRunning) {
+      intervalID = setInterval(triviaGame.triviaTimer, 1000);
+      triviaGame.clockRunning = true;
+    }
   },
 
   checkAnswer: function() {
@@ -126,7 +135,11 @@ var triviaGame = {
     var answer = ($(this).attr("data-choice"));
     var points = triviaGame.timeLeft;
 
+    $("#choices").addClass("h1").text("You chose: " + answer);
+
+
     clearInterval(intervalID);
+    triviaGame.clockRunning = false;
     triviaGame.timeLeft = 45;
     myAudio.pause();
 
@@ -187,6 +200,7 @@ var triviaGame = {
     triviaGame.score = 0;
     triviaGame.questionsLeft = 10;
     triviaGame.timeLeft = 45;
+    triviaGame.clockRunning = false;
     triviaGame.rightAnswer = "";
     triviaGame.alreadyGuessed.length = 0;
     triviaGame.createAnswerChoices();
